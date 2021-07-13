@@ -121,6 +121,7 @@
     <ClCompile Include="FormAbout.cpp" />
     <ClCompile Include="FormData.cpp" />
     <ClCompile Include="MyFormMenu.cpp" />
+    <ClCompile Include="PeopleList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FormAbout.h">
@@ -132,6 +133,7 @@
     <ClInclude Include="MyFormMenu.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PeopleList.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FormAbout.resx">
