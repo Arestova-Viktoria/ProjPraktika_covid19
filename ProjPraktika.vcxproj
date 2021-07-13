@@ -118,12 +118,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Children.cpp" />
     <ClCompile Include="FormAbout.cpp" />
     <ClCompile Include="FormData.cpp" />
     <ClCompile Include="MyFormMenu.cpp" />
     <ClCompile Include="PeopleList.cpp" />
+    <ClCompile Include="Person.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Children.h" />
     <ClInclude Include="FormAbout.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -134,6 +137,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PeopleList.h" />
+    <ClInclude Include="Person.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FormAbout.resx">

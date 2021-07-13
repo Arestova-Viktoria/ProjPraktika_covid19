@@ -1,4 +1,10 @@
 #pragma once
+#include "PeopleList.h"
+#include <iostream>
+#include <iomanip>
+#include <vector>
+
+
 namespace ProjPraktika {
 
 	using namespace System;
@@ -7,7 +13,7 @@ namespace ProjPraktika {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::IO;
 	/// <summary>
 	/// Сводка для FormData
 	/// </summary>
@@ -60,6 +66,7 @@ namespace ProjPraktika {
 	private: System::Windows::Forms::Label^ label_10;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown10;
 	private: System::Windows::Forms::Button^ button_restart;
+	private: System::Windows::Forms::Button^ button_start_model;
 
 
 
@@ -75,7 +82,7 @@ namespace ProjPraktika {
 		/// <summary>
 		/// Обязательная переменная конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -111,6 +118,7 @@ namespace ProjPraktika {
 			this->label_10 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown10 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->button_restart = (gcnew System::Windows::Forms::Button());
+			this->button_start_model = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
@@ -415,12 +423,26 @@ namespace ProjPraktika {
 			this->button_restart->UseVisualStyleBackColor = true;
 			this->button_restart->Click += gcnew System::EventHandler(this, &FormData::button_restart_Click);
 			// 
+			// button_start_model
+			// 
+			this->button_start_model->AutoSize = true;
+			this->button_start_model->Font = (gcnew System::Drawing::Font(L"Broadway", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button_start_model->Location = System::Drawing::Point(536, 584);
+			this->button_start_model->Name = L"button_start_model";
+			this->button_start_model->Size = System::Drawing::Size(186, 37);
+			this->button_start_model->TabIndex = 27;
+			this->button_start_model->Text = L"Запуск модели";
+			this->button_start_model->UseVisualStyleBackColor = true;
+			this->button_start_model->Click += gcnew System::EventHandler(this, &FormData::button_start_model_Click);
+			// 
 			// FormData
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::PapayaWhip;
 			this->ClientSize = System::Drawing::Size(1072, 633);
+			this->Controls->Add(this->button_start_model);
 			this->Controls->Add(this->button_restart);
 			this->Controls->Add(this->numericUpDown10);
 			this->Controls->Add(this->label_10);
@@ -467,55 +489,121 @@ namespace ProjPraktika {
 
 		}
 		array<Button^, 2>^ buttons;
+		array<int^, 2>^ text_buttons = gcnew array<int^, 2>(21, 21);
+
+		void print_pole(int n) {
+			for (int j = 0; j < 21; j++) {
+				for (int i = 0; i < 21; i++) {
+
+					if (i == n && j == n) {
+						i++;
+						j++;
+						buttons[i, j]->BackColor = Color::Black;
+						i--;
+						buttons[i, j]->BackColor = Color::Black;
+						j--;
+
+						i++;
+						buttons[i, j]->BackColor = Color::Black;
+						j--;
+						buttons[i, j]->BackColor = Color::Black;
+						j++;
+						i--;
+
+
+						i--;
+						buttons[i, j]->BackColor = Color::Black;
+						j++;
+						buttons[i, j]->BackColor = Color::Black;
+						i++;
+						j--;
+
+						j--;
+						buttons[i, j]->BackColor = Color::Black;
+						i--;
+						buttons[i, j]->BackColor = Color::Black;
+						j++;
+						i++;
+
+					}
+
+				}
+			}
+		}
 #pragma endregion
 
 
 
-private: System::Void button_lastExit_Click(System::Object^ sender, System::EventArgs^ e) {
-	//выход из программы
-	Application::Exit();
-}
-private: System::Void button_back_Click(System::Object^ sender, System::EventArgs^ e) {
-	FormData::Hide();
-}
-private: System::Void button_enter_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ one = numericUpDown1->Text;
-	if (one == "20")
-		MessageBox::Show(this, "Всё ок", "Сообщение", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	private: System::Void button_lastExit_Click(System::Object^ sender, System::EventArgs^ e) {
+		//выход из программы
+		Application::Exit();
+	}
+	private: System::Void button_back_Click(System::Object^ sender, System::EventArgs^ e) {
+		FormData::Hide();
+	}
+	private: System::Void button_enter_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ one = numericUpDown1->Text;
+		if (one == "20")
+			MessageBox::Show(this, "Всё ок", "Сообщение", MessageBoxButtons::OK, MessageBoxIcon::Information);
 
-}
-private: System::Void FormData_Load(System::Object^ sender, System::EventArgs^ e) {
-	
-	//отрисовка поля на форме (размер 21х21 кнопок)	
-	buttons = gcnew array<Button^, 2>(21, 21);
+	}
+	private: System::Void FormData_Load(System::Object^ sender, System::EventArgs^ e) {
 
-	for (int i = 0; i < 21; i++)
-	{
-		for (int j = 0; j < 21; j++)
+		//отрисовка поля на форме (размер 21х21 кнопок)	
+		buttons = gcnew array<Button^, 2>(21, 21);
+
+		for (int i = 0; i < 21; i++)
 		{
-			Button^ btn = gcnew Button();
-			btn->Size = Drawing::Size(20, 20);
-			btn->Location = Drawing::Point(330 + i * 20, 42 + j * 20);
+			for (int j = 0; j < 21; j++)
+			{
+				Button^ btn = gcnew Button();
+				btn->Size = Drawing::Size(20, 20);
+				btn->Location = Drawing::Point(330 + i * 20, 42 + j * 20);
 
-			btn->FlatStyle = FlatStyle::Flat;
-			btn->FlatAppearance->BorderColor = Color::LightGray;
-			Controls->Add(btn);
-			buttons[i, j] = btn;
-			if(i == 10 && j == 10)	//посередине первый зараженный, отмечен красным
-				buttons[i, j]->BackColor = Color::Red;
+				btn->FlatStyle = FlatStyle::Flat;
+				btn->FlatAppearance->BorderColor = Color::LightGray;
+				Controls->Add(btn);
+				buttons[i, j] = btn;
+				if (i == 10 && j == 10)	//посередине первый зараженный, отмечен красным
+					buttons[i, j]->BackColor = Color::Red;
+			}
 		}
 	}
-}
 
-//перезапуск модели
-private: System::Void button_restart_Click(System::Object^ sender, System::EventArgs^ e) {
-	for (int j = 0; j < 21; j++) {
-		for (int i = 0; i < 21; i++) {
-			buttons[i, j]->FlatAppearance->BorderColor = Color::LightGray;
-			if (i == 10 && j == 10)	//посередине первый зараженный, отмечен красным
-				buttons[i, j]->BackColor = Color::Red;
+		   //перезапуск модели
+	private: System::Void button_restart_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		for (int j = 0; j < 21; j++) {
+			for (int i = 0; i < 21; i++) {
+
+				buttons[i, j]->BackColor = Color::PapayaWhip;
+				buttons[i, j]->FlatAppearance->BorderColor = Color::LightGray;
+				if (i == 10 && j == 10)	//посередине первый зараженный, отмечен красным
+					buttons[i, j]->BackColor = Color::Red;
+
+			}
 		}
 	}
+
+		   //запуск модели
+	private: System::Void button_start_model_Click(System::Object^ sender, System::EventArgs^ e) {
+		PeopleList^ p = gcnew PeopleList();
+		p->work_init(text_buttons);
+
+		/*	//проверка
+			for (int j = 0; j < 21; j++) {
+				for (int i = 0; i < 21; i++) {
+					if (Convert::ToInt32(text_buttons[i, j]) == 1)
+						buttons[i, j]->BackColor = Color::Black;
+				}
+			}
+		*/
+
+		print_pole(10);
+
+				
 }
+
+
 };
 }
