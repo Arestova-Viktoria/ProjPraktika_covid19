@@ -1,4 +1,4 @@
-#include "Children.h"
+#include "Aged.h"
 #include "Person.h"
 using namespace System;
 using namespace System::ComponentModel;
@@ -9,12 +9,14 @@ using namespace System::Drawing;
 using namespace System::IO;
 using namespace System::Threading;
 
-int Children::get_risk() {
-	risk_child = 0;
-	return risk_child;
+int Aged::get_risk() {
+	risk_aged = 100;
+	return risk_aged;
 }
-bool Children::check_perenoch() {
-	perenoch = false;
-	return perenoch;
-
+bool Aged::check_sicks(int sick) {
+	if (sick == 0)
+		chronic_sicks = false;
+	else
+		chronic_sicks = true;
+	return chronic_sicks;
 }

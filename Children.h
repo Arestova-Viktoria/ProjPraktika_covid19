@@ -5,9 +5,9 @@ ref class Children :
 {
 private:
 	int risk_child;
-	int perenoch;
+	bool perenoch;
 public:
 	int Children::get_risk();
-	int Children::check_perenoch();
+	bool Children::check_perenoch();
 };
 

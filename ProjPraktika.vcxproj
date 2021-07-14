@@ -118,6 +118,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Adult.cpp" />
+    <ClCompile Include="Aged.cpp" />
     <ClCompile Include="Children.cpp" />
     <ClCompile Include="FormAbout.cpp" />
     <ClCompile Include="FormData.cpp" />
@@ -126,6 +128,8 @@
     <ClCompile Include="Person.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Adult.h" />
+    <ClInclude Include="Aged.h" />
     <ClInclude Include="Children.h" />
     <ClInclude Include="FormAbout.h">
       <FileType>CppForm</FileType>

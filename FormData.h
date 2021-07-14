@@ -3,6 +3,10 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
+#include <Windows.h>
+#include <dos.h>
+#include <chrono>
+#include <thread>
 
 
 namespace ProjPraktika {
@@ -14,6 +18,8 @@ namespace ProjPraktika {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::IO;
+	using namespace System::Threading;
+	
 	/// <summary>
 	/// —водка дл€ FormData
 	/// </summary>
@@ -67,6 +73,7 @@ namespace ProjPraktika {
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown10;
 	private: System::Windows::Forms::Button^ button_restart;
 	private: System::Windows::Forms::Button^ button_start_model;
+	private: System::Windows::Forms::Button^ button_step;
 
 
 
@@ -119,6 +126,7 @@ namespace ProjPraktika {
 			this->numericUpDown10 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->button_restart = (gcnew System::Windows::Forms::Button());
 			this->button_start_model = (gcnew System::Windows::Forms::Button());
+			this->button_step = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
@@ -436,12 +444,26 @@ namespace ProjPraktika {
 			this->button_start_model->UseVisualStyleBackColor = true;
 			this->button_start_model->Click += gcnew System::EventHandler(this, &FormData::button_start_model_Click);
 			// 
+			// button_step
+			// 
+			this->button_step->AutoSize = true;
+			this->button_step->Font = (gcnew System::Drawing::Font(L"Broadway", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button_step->Location = System::Drawing::Point(738, 584);
+			this->button_step->Name = L"button_step";
+			this->button_step->Size = System::Drawing::Size(71, 37);
+			this->button_step->TabIndex = 28;
+			this->button_step->Text = L"Ўаг";
+			this->button_step->UseVisualStyleBackColor = true;
+			this->button_step->Click += gcnew System::EventHandler(this, &FormData::button_step_Click);
+			// 
 			// FormData
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::PapayaWhip;
 			this->ClientSize = System::Drawing::Size(1072, 633);
+			this->Controls->Add(this->button_step);
 			this->Controls->Add(this->button_start_model);
 			this->Controls->Add(this->button_restart);
 			this->Controls->Add(this->numericUpDown10);
@@ -490,12 +512,13 @@ namespace ProjPraktika {
 		}
 		array<Button^, 2>^ buttons;
 		array<int^, 2>^ text_buttons = gcnew array<int^, 2>(21, 21);
+		int i_button, j_button;
 
-		void print_pole(int n) {
+		void print_pole(int n, int m) { //прорисовка вокруг конкрестной клетки
 			for (int j = 0; j < 21; j++) {
 				for (int i = 0; i < 21; i++) {
 
-					if (i == n && j == n) {
+					if (i == n && j == m) {
 						i++;
 						j++;
 						buttons[i, j]->BackColor = Color::Black;
@@ -529,6 +552,7 @@ namespace ProjPraktika {
 
 				}
 			}
+			
 		}
 #pragma endregion
 
@@ -564,8 +588,11 @@ namespace ProjPraktika {
 				btn->FlatAppearance->BorderColor = Color::LightGray;
 				Controls->Add(btn);
 				buttons[i, j] = btn;
-				if (i == 10 && j == 10)	//посередине первый зараженный, отмечен красным
+				if (i == 10 && j == 10) {	//посередине первый зараженный, отмечен красным
 					buttons[i, j]->BackColor = Color::Red;
+					i_button = 10;
+					j_button = 10;
+				}
 			}
 		}
 	}
@@ -590,20 +617,45 @@ namespace ProjPraktika {
 		PeopleList^ p = gcnew PeopleList();
 		p->work_init(text_buttons);
 
-		/*	//проверка
+			//проверка
 			for (int j = 0; j < 21; j++) {
 				for (int i = 0; i < 21; i++) {
-					if (Convert::ToInt32(text_buttons[i, j]) == 1)
+					if (Convert::ToInt32(text_buttons[i, j]) == 1) {
+						//std::chrono::seconds dura(2);
+						//std::this_thread::sleep_for(dura);
+						System::Threading::Tasks::Task::Delay(1000);
 						buttons[i, j]->BackColor = Color::Black;
+					}
 				}
 			}
-		*/
+		
 
-		print_pole(10);
-
-				
+		//print_pole(10, 10);
+		//Sleep(500);
+		//Thread::Sleep(1000);
+		//System::Threading::Tasks::Task::Delay(10000);
+		
 }
 
 
+private: System::Void button_step_Click(System::Object^ sender, System::EventArgs^ e) {
+	//std::chrono::seconds dura(1);
+	//std::this_thread::sleep_for(dura);
+	//i_button += 1;
+	//j_button += 1;
+	//if(i_button <20 && j_button<20)
+	//	print_pole(i_button, j_button);
+	//проверка
+	for (int j = 0; j < 21; j++) {
+		for (int i = 0; i < 21; i++) {
+			if (Convert::ToInt32(text_buttons[i, j]) == 0) {
+				//std::chrono::seconds dura(2);
+				//std::this_thread::sleep_for(dura);
+				System::Threading::Tasks::Task::Delay(1000);
+				buttons[i, j]->BackColor = Color::White;
+			}
+		}
+	}
+}
 };
 }
