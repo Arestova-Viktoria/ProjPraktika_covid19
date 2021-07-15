@@ -1,5 +1,8 @@
 #include "PeopleList.h"
 #include "Children.h"
+#include "Person.h"
+#include "Adult.h"
+#include "Aged.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -12,6 +15,7 @@ using namespace System::Data;
 using namespace System::Drawing;
 using namespace System::IO;
 using namespace System::Threading;
+
 
 void PeopleList::work_init(array<int^, 2>^ text_buttons) {
 
@@ -36,21 +40,36 @@ void PeopleList::work_init(array<int^, 2>^ text_buttons) {
 
 	int proc_det, proc_vzr, proc_pojil;
 
-	proc_det = 442 * 17 / 100; //процент детей
-	proc_vzr = 442 * 68 / 100; //процент взрослых
-	proc_pojil = 442 * 15 / 100; //процент пожилых на поле
+	proc_det = 75;
+	proc_vzr = 301;
+	proc_pojil = 66;
+	//proc_det = 442 * 17 / 100; //процент детей 75
+	//proc_vzr = 442 * 68 / 100; //процент взрослых 301
+	//proc_pojil = 442 * 15 / 100; //процент пожилых на поле 66
+
 
 	int rand_change;
-	int mas_change[21][21];
+	int mas_change[40][40];
+	int posech[21][21];
+
+	for (int i = 0; i < 21; i++)
+		for (int j = 0; j < 21; j++)
+			posech[i][j] = 0;
 
 	srand(time(NULL));
-	for (int i = 0; i < 21; i++)
-		for (int j = 0; j < 21; j++){
-			
-			rand_change = 1 + rand() % 3;
-			
+	
+	
+	for (int i = 0; i < 21; i++) {
+		for (int j = 0; j < 21; j++) {
+			rand_change = 1 + rand() % 100;
 			mas_change[i][j] = rand_change;
 		}
+	}
+		
+
+	
+			
+		
 	
 
 	//распределяем id людей по спирали (от краев к центру)
@@ -69,29 +88,63 @@ void PeopleList::work_init(array<int^, 2>^ text_buttons) {
 			A[j][k - 1] = i++;/* --//-- по левому вертикальному столбцу*/
 	}
 	if (n % 2 == 1) A[p][p] = n * n;
-	for (i = 0; i < n; i++)
-		for (j = 0; j < n; j++)
-		{	
-			//if (mas_change[i][j] == 2) {
-				Person^ pers = gcnew Person();
-				pers->id = A[i][j];
-				if (mas_change[i][j] == 1) 
-					text_buttons[i, j] = 1;
-
-
-
-
-				//проверка
-			/*	if (pers->id <= 440) //440 все кроме центральной
-					text_buttons[i, j] = 1;
-
-				else
-					text_buttons[i, j] = 0;*/
-			//}
-		}
 	
-	//for (i = 0; i < n; i++)
-		//for (j = 0; j < n; j++)
+	//присваиваем id конкретным людям, рандомно закрашиваем некоторых из них
+	int kol_1 = 0, kol_2 = 0, kol_3 = 0;
+	for (i = 0; i < n; i++) {
+		for (j = 0; j < n; j++)
+		{
+
+
+			if (posech[i][j] == 0) {
+				//взрослые
+				if (mas_change[i][j] == 1 || mas_change[i][j] <= 68) { //распределение по возрасту на 1, 2, 3
+					Adult^ ad = gcnew Adult();
+
+					ad->id = A[i][j];
+					posech[i][j] = 1;
+					text_buttons[i, j] = 2;
+					kol_2 += 1;
+
+
+					//if (ad->get_risk() == 0)
+					
+
+				}
+
+				//дети
+				if (mas_change[i][j] > 83 && mas_change[i][j] <= 100) { //распределение по возрасту на 1, 2, 3
+					Children^ child = gcnew Children();
+
+					child->id = A[i][j];
+					posech[i][j] = 1;
+					text_buttons[i, j] = 1;
+					kol_1 += 1;
+
+					//if (child->get_risk() == 0)
+
+
+
+				}
+
+				//пожилые люди
+				if (mas_change[i][j] > 68 && mas_change[i][j] <=83) { //распределение по возрасту на 1, 2, 3
+					Aged^ ag = gcnew Aged();
+
+					ag->id = A[i][j];
+					posech[i][j] = 1;
+					text_buttons[i, j] = 3;
+					kol_3 += 1;
+
+					//if (ag->get_risk() == 0)
+
+
+				}
+
+			}
+		}
+	}
+
 
 
 }

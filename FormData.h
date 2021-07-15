@@ -1,5 +1,9 @@
 #pragma once
 #include "PeopleList.h"
+#include "Children.h"
+#include "Person.h"
+#include "Adult.h"
+#include "Aged.h"
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -50,15 +54,15 @@ namespace ProjPraktika {
 	private: System::Windows::Forms::Button^ button_lastExit;
 	private: System::Windows::Forms::Label^ label_model;
 	private: System::Windows::Forms::Button^ button_back;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
+
 	private: System::Windows::Forms::Button^ button_enter;
-	private: System::Windows::Forms::Label^ label_1;
-	private: System::Windows::Forms::Label^ label_2;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown2;
-	private: System::Windows::Forms::Label^ label_3;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
-	private: System::Windows::Forms::Label^ label_4;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown4;
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Label^ label_5;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown5;
 	private: System::Windows::Forms::Label^ label_6;
@@ -69,11 +73,27 @@ namespace ProjPraktika {
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 	private: System::Windows::Forms::Label^ label_9;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown9;
-	private: System::Windows::Forms::Label^ label_10;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown10;
+
+
 	private: System::Windows::Forms::Button^ button_restart;
 	private: System::Windows::Forms::Button^ button_start_model;
 	private: System::Windows::Forms::Button^ button_step;
+	private: System::Windows::Forms::Button^ button_po1;
+	private: System::Windows::Forms::Label^ label_po1;
+	private: System::Windows::Forms::Button^ button_po2;
+	private: System::Windows::Forms::Label^ label_po2;
+	private: System::Windows::Forms::Button^ button_po3;
+	private: System::Windows::Forms::Label^ label_po3;
+	private: System::Windows::Forms::Button^ button_po4;
+	private: System::Windows::Forms::Label^ label_po4;
+	private: System::Windows::Forms::Button^ button_po5;
+	private: System::Windows::Forms::Label^ label_po5;
+	private: System::Windows::Forms::Label^ label_po6;
+	private: System::Windows::Forms::Button^ button_po7;
+	private: System::Windows::Forms::Label^ label_po7;
+	private: System::Windows::Forms::GroupBox^ groupBox1;
+
+
 
 
 
@@ -103,15 +123,7 @@ namespace ProjPraktika {
 			this->button_lastExit = (gcnew System::Windows::Forms::Button());
 			this->label_model = (gcnew System::Windows::Forms::Label());
 			this->button_back = (gcnew System::Windows::Forms::Button());
-			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->button_enter = (gcnew System::Windows::Forms::Button());
-			this->label_1 = (gcnew System::Windows::Forms::Label());
-			this->label_2 = (gcnew System::Windows::Forms::Label());
-			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label_3 = (gcnew System::Windows::Forms::Label());
-			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label_4 = (gcnew System::Windows::Forms::Label());
-			this->numericUpDown4 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label_5 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown5 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label_6 = (gcnew System::Windows::Forms::Label());
@@ -122,21 +134,29 @@ namespace ProjPraktika {
 			this->numericUpDown8 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label_9 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown9 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label_10 = (gcnew System::Windows::Forms::Label());
-			this->numericUpDown10 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->button_restart = (gcnew System::Windows::Forms::Button());
 			this->button_start_model = (gcnew System::Windows::Forms::Button());
 			this->button_step = (gcnew System::Windows::Forms::Button());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
+			this->button_po1 = (gcnew System::Windows::Forms::Button());
+			this->label_po1 = (gcnew System::Windows::Forms::Label());
+			this->button_po2 = (gcnew System::Windows::Forms::Button());
+			this->label_po2 = (gcnew System::Windows::Forms::Label());
+			this->button_po3 = (gcnew System::Windows::Forms::Button());
+			this->label_po3 = (gcnew System::Windows::Forms::Label());
+			this->button_po4 = (gcnew System::Windows::Forms::Button());
+			this->label_po4 = (gcnew System::Windows::Forms::Label());
+			this->button_po5 = (gcnew System::Windows::Forms::Button());
+			this->label_po5 = (gcnew System::Windows::Forms::Label());
+			this->label_po6 = (gcnew System::Windows::Forms::Label());
+			this->button_po7 = (gcnew System::Windows::Forms::Button());
+			this->label_po7 = (gcnew System::Windows::Forms::Label());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown8))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown9))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown10))->BeginInit();
+			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label_data
@@ -202,17 +222,6 @@ namespace ProjPraktika {
 			this->button_back->UseVisualStyleBackColor = true;
 			this->button_back->Click += gcnew System::EventHandler(this, &FormData::button_back_Click);
 			// 
-			// numericUpDown1
-			// 
-			this->numericUpDown1->Font = (gcnew System::Drawing::Font(L"Calibri", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->numericUpDown1->Location = System::Drawing::Point(277, 57);
-			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 20, 0, 0, 0 });
-			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(92, 28);
-			this->numericUpDown1->TabIndex = 5;
-			this->numericUpDown1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
-			// 
 			// button_enter
 			// 
 			this->button_enter->AutoSize = true;
@@ -226,83 +235,11 @@ namespace ProjPraktika {
 			this->button_enter->UseVisualStyleBackColor = true;
 			this->button_enter->Click += gcnew System::EventHandler(this, &FormData::button_enter_Click);
 			// 
-			// label_1
-			// 
-			this->label_1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label_1->Location = System::Drawing::Point(8, 57);
-			this->label_1->Name = L"label_1";
-			this->label_1->Size = System::Drawing::Size(243, 28);
-			this->label_1->TabIndex = 7;
-			this->label_1->Text = L"Инкубационный период:";
-			// 
-			// label_2
-			// 
-			this->label_2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label_2->Location = System::Drawing::Point(8, 94);
-			this->label_2->Name = L"label_2";
-			this->label_2->Size = System::Drawing::Size(263, 28);
-			this->label_2->TabIndex = 8;
-			this->label_2->Text = L"Длительность симптомов:";
-			// 
-			// numericUpDown2
-			// 
-			this->numericUpDown2->Font = (gcnew System::Drawing::Font(L"Calibri", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->numericUpDown2->Location = System::Drawing::Point(277, 94);
-			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 20, 0, 0, 0 });
-			this->numericUpDown2->Name = L"numericUpDown2";
-			this->numericUpDown2->Size = System::Drawing::Size(92, 28);
-			this->numericUpDown2->TabIndex = 9;
-			this->numericUpDown2->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
-			// 
-			// label_3
-			// 
-			this->label_3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label_3->Location = System::Drawing::Point(8, 131);
-			this->label_3->Name = L"label_3";
-			this->label_3->Size = System::Drawing::Size(255, 28);
-			this->label_3->TabIndex = 10;
-			this->label_3->Text = L"Радиус перемещения:";
-			// 
-			// numericUpDown3
-			// 
-			this->numericUpDown3->Font = (gcnew System::Drawing::Font(L"Calibri", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->numericUpDown3->Location = System::Drawing::Point(277, 131);
-			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 20, 0, 0, 0 });
-			this->numericUpDown3->Name = L"numericUpDown3";
-			this->numericUpDown3->Size = System::Drawing::Size(92, 28);
-			this->numericUpDown3->TabIndex = 11;
-			this->numericUpDown3->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
-			// 
-			// label_4
-			// 
-			this->label_4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label_4->Location = System::Drawing::Point(8, 170);
-			this->label_4->Name = L"label_4";
-			this->label_4->Size = System::Drawing::Size(255, 28);
-			this->label_4->TabIndex = 12;
-			this->label_4->Text = L"Контактов в день:";
-			// 
-			// numericUpDown4
-			// 
-			this->numericUpDown4->Font = (gcnew System::Drawing::Font(L"Calibri", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->numericUpDown4->Location = System::Drawing::Point(277, 170);
-			this->numericUpDown4->Name = L"numericUpDown4";
-			this->numericUpDown4->Size = System::Drawing::Size(92, 28);
-			this->numericUpDown4->TabIndex = 13;
-			this->numericUpDown4->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
-			// 
 			// label_5
 			// 
 			this->label_5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label_5->Location = System::Drawing::Point(8, 209);
+			this->label_5->Location = System::Drawing::Point(8, 54);
 			this->label_5->Name = L"label_5";
 			this->label_5->Size = System::Drawing::Size(257, 51);
 			this->label_5->TabIndex = 14;
@@ -312,17 +249,17 @@ namespace ProjPraktika {
 			// 
 			this->numericUpDown5->Font = (gcnew System::Drawing::Font(L"Calibri", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->numericUpDown5->Location = System::Drawing::Point(277, 220);
+			this->numericUpDown5->Location = System::Drawing::Point(277, 65);
 			this->numericUpDown5->Name = L"numericUpDown5";
 			this->numericUpDown5->Size = System::Drawing::Size(92, 28);
 			this->numericUpDown5->TabIndex = 15;
-			this->numericUpDown5->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
+			this->numericUpDown5->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5, 0, 0, 0 });
 			// 
 			// label_6
 			// 
 			this->label_6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label_6->Location = System::Drawing::Point(8, 271);
+			this->label_6->Location = System::Drawing::Point(8, 123);
 			this->label_6->Name = L"label_6";
 			this->label_6->Size = System::Drawing::Size(255, 28);
 			this->label_6->TabIndex = 16;
@@ -332,7 +269,7 @@ namespace ProjPraktika {
 			// 
 			this->numericUpDown6->Font = (gcnew System::Drawing::Font(L"Calibri", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->numericUpDown6->Location = System::Drawing::Point(277, 271);
+			this->numericUpDown6->Location = System::Drawing::Point(277, 123);
 			this->numericUpDown6->Name = L"numericUpDown6";
 			this->numericUpDown6->Size = System::Drawing::Size(92, 28);
 			this->numericUpDown6->TabIndex = 17;
@@ -342,7 +279,7 @@ namespace ProjPraktika {
 			// 
 			this->label_7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label_7->Location = System::Drawing::Point(8, 309);
+			this->label_7->Location = System::Drawing::Point(8, 179);
 			this->label_7->Name = L"label_7";
 			this->label_7->Size = System::Drawing::Size(255, 28);
 			this->label_7->TabIndex = 18;
@@ -352,17 +289,17 @@ namespace ProjPraktika {
 			// 
 			this->numericUpDown7->Font = (gcnew System::Drawing::Font(L"Calibri", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->numericUpDown7->Location = System::Drawing::Point(277, 309);
+			this->numericUpDown7->Location = System::Drawing::Point(277, 179);
 			this->numericUpDown7->Name = L"numericUpDown7";
 			this->numericUpDown7->Size = System::Drawing::Size(92, 28);
 			this->numericUpDown7->TabIndex = 19;
-			this->numericUpDown7->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
+			this->numericUpDown7->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 13, 0, 0, 0 });
 			// 
 			// label_8
 			// 
 			this->label_8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label_8->Location = System::Drawing::Point(8, 349);
+			this->label_8->Location = System::Drawing::Point(8, 230);
 			this->label_8->Name = L"label_8";
 			this->label_8->Size = System::Drawing::Size(263, 54);
 			this->label_8->TabIndex = 20;
@@ -372,17 +309,17 @@ namespace ProjPraktika {
 			// 
 			this->numericUpDown8->Font = (gcnew System::Drawing::Font(L"Calibri", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->numericUpDown8->Location = System::Drawing::Point(277, 365);
+			this->numericUpDown8->Location = System::Drawing::Point(277, 242);
 			this->numericUpDown8->Name = L"numericUpDown8";
 			this->numericUpDown8->Size = System::Drawing::Size(92, 28);
 			this->numericUpDown8->TabIndex = 21;
-			this->numericUpDown8->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
+			this->numericUpDown8->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 98, 0, 0, 0 });
 			// 
 			// label_9
 			// 
 			this->label_9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label_9->Location = System::Drawing::Point(8, 416);
+			this->label_9->Location = System::Drawing::Point(8, 299);
 			this->label_9->Name = L"label_9";
 			this->label_9->Size = System::Drawing::Size(255, 55);
 			this->label_9->TabIndex = 22;
@@ -392,31 +329,11 @@ namespace ProjPraktika {
 			// 
 			this->numericUpDown9->Font = (gcnew System::Drawing::Font(L"Calibri", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->numericUpDown9->Location = System::Drawing::Point(277, 431);
+			this->numericUpDown9->Location = System::Drawing::Point(277, 312);
 			this->numericUpDown9->Name = L"numericUpDown9";
 			this->numericUpDown9->Size = System::Drawing::Size(92, 28);
 			this->numericUpDown9->TabIndex = 23;
-			this->numericUpDown9->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
-			// 
-			// label_10
-			// 
-			this->label_10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label_10->Location = System::Drawing::Point(8, 480);
-			this->label_10->Name = L"label_10";
-			this->label_10->Size = System::Drawing::Size(255, 52);
-			this->label_10->TabIndex = 24;
-			this->label_10->Text = L"Общее состояние\r\nздоровья людей (в %):";
-			// 
-			// numericUpDown10
-			// 
-			this->numericUpDown10->Font = (gcnew System::Drawing::Font(L"Calibri", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->numericUpDown10->Location = System::Drawing::Point(277, 491);
-			this->numericUpDown10->Name = L"numericUpDown10";
-			this->numericUpDown10->Size = System::Drawing::Size(92, 28);
-			this->numericUpDown10->TabIndex = 25;
-			this->numericUpDown10->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
+			this->numericUpDown9->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 80, 0, 0, 0 });
 			// 
 			// button_restart
 			// 
@@ -457,17 +374,184 @@ namespace ProjPraktika {
 			this->button_step->UseVisualStyleBackColor = true;
 			this->button_step->Click += gcnew System::EventHandler(this, &FormData::button_step_Click);
 			// 
+			// button_po1
+			// 
+			this->button_po1->BackColor = System::Drawing::Color::Firebrick;
+			this->button_po1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->button_po1->FlatAppearance->BorderColor = System::Drawing::Color::LightGray;
+			this->button_po1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button_po1->Location = System::Drawing::Point(14, 39);
+			this->button_po1->Name = L"button_po1";
+			this->button_po1->Size = System::Drawing::Size(20, 20);
+			this->button_po1->TabIndex = 29;
+			this->button_po1->UseVisualStyleBackColor = false;
+			// 
+			// label_po1
+			// 
+			this->label_po1->AutoSize = true;
+			this->label_po1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label_po1->Location = System::Drawing::Point(50, 39);
+			this->label_po1->Name = L"label_po1";
+			this->label_po1->Size = System::Drawing::Size(102, 20);
+			this->label_po1->TabIndex = 30;
+			this->label_po1->Text = L"- Заболели";
+			// 
+			// button_po2
+			// 
+			this->button_po2->BackColor = System::Drawing::Color::LightCoral;
+			this->button_po2->FlatAppearance->BorderColor = System::Drawing::Color::LightGray;
+			this->button_po2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button_po2->Location = System::Drawing::Point(14, 65);
+			this->button_po2->Name = L"button_po2";
+			this->button_po2->Size = System::Drawing::Size(20, 20);
+			this->button_po2->TabIndex = 31;
+			this->button_po2->UseVisualStyleBackColor = false;
+			// 
+			// label_po2
+			// 
+			this->label_po2->AutoSize = true;
+			this->label_po2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label_po2->Location = System::Drawing::Point(50, 65);
+			this->label_po2->Name = L"label_po2";
+			this->label_po2->Size = System::Drawing::Size(248, 40);
+			this->label_po2->TabIndex = 32;
+			this->label_po2->Text = L"- Переносчики (в том числе \r\n   в инкубационный период)";
+			// 
+			// button_po3
+			// 
+			this->button_po3->BackColor = System::Drawing::Color::PapayaWhip;
+			this->button_po3->FlatAppearance->BorderColor = System::Drawing::Color::LightGray;
+			this->button_po3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button_po3->Location = System::Drawing::Point(14, 111);
+			this->button_po3->Name = L"button_po3";
+			this->button_po3->Size = System::Drawing::Size(20, 20);
+			this->button_po3->TabIndex = 33;
+			this->button_po3->UseVisualStyleBackColor = false;
+			// 
+			// label_po3
+			// 
+			this->label_po3->AutoSize = true;
+			this->label_po3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label_po3->Location = System::Drawing::Point(50, 110);
+			this->label_po3->Name = L"label_po3";
+			this->label_po3->Size = System::Drawing::Size(205, 20);
+			this->label_po3->TabIndex = 34;
+			this->label_po3->Text = L"- Не подвержены риску";
+			// 
+			// button_po4
+			// 
+			this->button_po4->BackColor = System::Drawing::Color::SeaGreen;
+			this->button_po4->FlatAppearance->BorderColor = System::Drawing::Color::LightGray;
+			this->button_po4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button_po4->Location = System::Drawing::Point(14, 161);
+			this->button_po4->Name = L"button_po4";
+			this->button_po4->Size = System::Drawing::Size(20, 20);
+			this->button_po4->TabIndex = 35;
+			this->button_po4->UseVisualStyleBackColor = false;
+			// 
+			// label_po4
+			// 
+			this->label_po4->AutoSize = true;
+			this->label_po4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label_po4->Location = System::Drawing::Point(50, 160);
+			this->label_po4->Name = L"label_po4";
+			this->label_po4->Size = System::Drawing::Size(135, 20);
+			this->label_po4->TabIndex = 36;
+			this->label_po4->Text = L"- Выздоровели";
+			// 
+			// button_po5
+			// 
+			this->button_po5->BackColor = System::Drawing::Color::Black;
+			this->button_po5->FlatAppearance->BorderColor = System::Drawing::Color::LightGray;
+			this->button_po5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button_po5->Location = System::Drawing::Point(14, 187);
+			this->button_po5->Name = L"button_po5";
+			this->button_po5->Size = System::Drawing::Size(20, 20);
+			this->button_po5->TabIndex = 37;
+			this->button_po5->UseVisualStyleBackColor = false;
+			// 
+			// label_po5
+			// 
+			this->label_po5->AutoSize = true;
+			this->label_po5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label_po5->Location = System::Drawing::Point(50, 187);
+			this->label_po5->Name = L"label_po5";
+			this->label_po5->Size = System::Drawing::Size(91, 20);
+			this->label_po5->TabIndex = 38;
+			this->label_po5->Text = L"- Погибли";
+			// 
+			// label_po6
+			// 
+			this->label_po6->AutoSize = true;
+			this->label_po6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label_po6->Location = System::Drawing::Point(4, 6);
+			this->label_po6->Name = L"label_po6";
+			this->label_po6->Size = System::Drawing::Size(279, 20);
+			this->label_po6->TabIndex = 39;
+			this->label_po6->Text = L"Условные обозначения модели:";
+			// 
+			// button_po7
+			// 
+			this->button_po7->BackColor = System::Drawing::Color::DarkGray;
+			this->button_po7->FlatAppearance->BorderColor = System::Drawing::Color::LightGray;
+			this->button_po7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button_po7->Location = System::Drawing::Point(14, 135);
+			this->button_po7->Name = L"button_po7";
+			this->button_po7->Size = System::Drawing::Size(20, 20);
+			this->button_po7->TabIndex = 40;
+			this->button_po7->UseVisualStyleBackColor = false;
+			// 
+			// label_po7
+			// 
+			this->label_po7->AutoSize = true;
+			this->label_po7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label_po7->Location = System::Drawing::Point(50, 135);
+			this->label_po7->Name = L"label_po7";
+			this->label_po7->Size = System::Drawing::Size(192, 20);
+			this->label_po7->TabIndex = 41;
+			this->label_po7->Text = L"- Полностью привиты";
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->BackColor = System::Drawing::Color::PapayaWhip;
+			this->groupBox1->Controls->Add(this->label_po7);
+			this->groupBox1->Controls->Add(this->button_po7);
+			this->groupBox1->Controls->Add(this->label_po6);
+			this->groupBox1->Controls->Add(this->label_po5);
+			this->groupBox1->Controls->Add(this->button_po5);
+			this->groupBox1->Controls->Add(this->label_po4);
+			this->groupBox1->Controls->Add(this->button_po4);
+			this->groupBox1->Controls->Add(this->label_po3);
+			this->groupBox1->Controls->Add(this->button_po3);
+			this->groupBox1->Controls->Add(this->label_po2);
+			this->groupBox1->Controls->Add(this->button_po2);
+			this->groupBox1->Controls->Add(this->label_po1);
+			this->groupBox1->Controls->Add(this->button_po1);
+			this->groupBox1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->groupBox1->ForeColor = System::Drawing::Color::Black;
+			this->groupBox1->Location = System::Drawing::Point(12, 357);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(330, 218);
+			this->groupBox1->TabIndex = 42;
+			this->groupBox1->TabStop = false;
+			// 
 			// FormData
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::PapayaWhip;
 			this->ClientSize = System::Drawing::Size(1072, 633);
+			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->button_step);
 			this->Controls->Add(this->button_start_model);
 			this->Controls->Add(this->button_restart);
-			this->Controls->Add(this->numericUpDown10);
-			this->Controls->Add(this->label_10);
 			this->Controls->Add(this->numericUpDown9);
 			this->Controls->Add(this->label_9);
 			this->Controls->Add(this->numericUpDown8);
@@ -478,15 +562,7 @@ namespace ProjPraktika {
 			this->Controls->Add(this->label_6);
 			this->Controls->Add(this->numericUpDown5);
 			this->Controls->Add(this->label_5);
-			this->Controls->Add(this->numericUpDown4);
-			this->Controls->Add(this->label_4);
-			this->Controls->Add(this->numericUpDown3);
-			this->Controls->Add(this->label_3);
-			this->Controls->Add(this->numericUpDown2);
-			this->Controls->Add(this->label_2);
-			this->Controls->Add(this->label_1);
 			this->Controls->Add(this->button_enter);
-			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->button_back);
 			this->Controls->Add(this->label_model);
 			this->Controls->Add(this->button_lastExit);
@@ -496,23 +572,21 @@ namespace ProjPraktika {
 			this->Name = L"FormData";
 			this->Text = L"Модель распространения коронавируса";
 			this->Load += gcnew System::EventHandler(this, &FormData::FormData_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown8))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown9))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown10))->EndInit();
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 		array<Button^, 2>^ buttons;
 		array<int^, 2>^ text_buttons = gcnew array<int^, 2>(21, 21);
-		int i_button, j_button;
+		array<Person^, 2>^ pers_list;
+		int raz = 0;
 
 		void print_pole(int n, int m) { //прорисовка вокруг конкрестной клетки
 			for (int j = 0; j < 21; j++) {
@@ -566,9 +640,8 @@ namespace ProjPraktika {
 		FormData::Hide();
 	}
 	private: System::Void button_enter_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ one = numericUpDown1->Text;
-		if (one == "20")
-			MessageBox::Show(this, "Всё ок", "Сообщение", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		
+		MessageBox::Show(this, "Данные введены успешно!", "Сообщение", MessageBoxButtons::OK, MessageBoxIcon::Information);
 
 	}
 	private: System::Void FormData_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -589,13 +662,13 @@ namespace ProjPraktika {
 				Controls->Add(btn);
 				buttons[i, j] = btn;
 				if (i == 10 && j == 10) {	//посередине первый зараженный, отмечен красным
-					buttons[i, j]->BackColor = Color::Red;
-					i_button = 10;
-					j_button = 10;
+					buttons[i, j]->BackColor = Color::Firebrick;
 				}
 			}
 		}
 	}
+
+
 
 		   //перезапуск модели
 	private: System::Void button_restart_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -606,7 +679,8 @@ namespace ProjPraktika {
 				buttons[i, j]->BackColor = Color::PapayaWhip;
 				buttons[i, j]->FlatAppearance->BorderColor = Color::LightGray;
 				if (i == 10 && j == 10)	//посередине первый зараженный, отмечен красным
-					buttons[i, j]->BackColor = Color::Red;
+					buttons[i, j]->BackColor = Color::Firebrick;
+				raz = 0;
 
 			}
 		}
@@ -620,11 +694,17 @@ namespace ProjPraktika {
 			//проверка
 			for (int j = 0; j < 21; j++) {
 				for (int i = 0; i < 21; i++) {
-					if (Convert::ToInt32(text_buttons[i, j]) == 1) {
-						//std::chrono::seconds dura(2);
-						//std::this_thread::sleep_for(dura);
-						System::Threading::Tasks::Task::Delay(1000);
-						buttons[i, j]->BackColor = Color::Black;
+					if (i == 10 && j == 10)	//посередине первый зараженный, отмечен красным
+						buttons[i, j]->BackColor = Color::Firebrick;
+					else {
+						if (Convert::ToInt32(text_buttons[i, j]) == 1) //дети
+							buttons[i, j]->BackColor = Color::PapayaWhip;
+						if (Convert::ToInt32(text_buttons[i, j]) == 2) //взрослые
+							buttons[i, j]->BackColor = Color::LightCoral;
+						if (Convert::ToInt32(text_buttons[i, j]) == 3) //пожилые
+							buttons[i, j]->BackColor = Color::LightCoral;
+						if (Convert::ToInt32(text_buttons[i, j]) == 4) //исключение
+							buttons[i, j]->BackColor = Color::Black;
 					}
 				}
 			}
@@ -638,6 +718,7 @@ namespace ProjPraktika {
 }
 
 
+
 private: System::Void button_step_Click(System::Object^ sender, System::EventArgs^ e) {
 	//std::chrono::seconds dura(1);
 	//std::this_thread::sleep_for(dura);
@@ -646,16 +727,130 @@ private: System::Void button_step_Click(System::Object^ sender, System::EventArg
 	//if(i_button <20 && j_button<20)
 	//	print_pole(i_button, j_button);
 	//проверка
-	for (int j = 0; j < 21; j++) {
-		for (int i = 0; i < 21; i++) {
-			if (Convert::ToInt32(text_buttons[i, j]) == 0) {
-				//std::chrono::seconds dura(2);
-				//std::this_thread::sleep_for(dura);
-				System::Threading::Tasks::Task::Delay(1000);
-				buttons[i, j]->BackColor = Color::White;
-			}
+	Int32 range;
+	Int32 mas_ranges[21][21];
+	srand(time(NULL));
+	for (int i = 0; i < 21; i++) {
+		for (int j = 0; j < 21; j++) {
+			range = 1 + rand() % 100;
+			mas_ranges[i][j] = range;
 		}
 	}
+	if (raz == 2)
+		raz -= 1;
+	if (raz == 0) { //заражение всех подверженных ему (не важно с симптомами или без)
+		for (int j = 0; j < 21; j++) {
+			for (int i = 0; i < 21; i++) {
+				
+				if (i == 10 && j == 10)	//посередине первый зараженный, отмечен красным
+					buttons[i, j]->BackColor = Color::Firebrick;
+				else {
+					if (Convert::ToInt32(text_buttons[i, j]) == 1) //дети
+						buttons[i, j]->BackColor = Color::PapayaWhip;
+					if (Convert::ToInt32(text_buttons[i, j]) == 2 || Convert::ToInt32(text_buttons[i, j]) == 3) { //взрослые
+						
+						String^ mask_nal = numericUpDown6->Text;
+						String^ priv_nal = numericUpDown7->Text;
+
+						
+
+						range = 1 + rand() % 100;
+						if (Convert::ToInt32(mask_nal) <= 50) { //если маски меньше чем у 50%
+							//range = 1 + rand() % 100;
+
+							if (mas_ranges[i][j] <= 70)
+								buttons[i, j]->BackColor = Color::Firebrick; // вероятность заразиться без маски и прививки 70%
+							else
+								buttons[i, j]->BackColor = Color::LightCoral;
+						}
+						if (Convert::ToInt32(mask_nal) >= 75) { //если маски больше чем у 75%
+							//range = 1 + rand() % 100;
+
+							if (mas_ranges[i][j] <= 2)
+								buttons[i, j]->BackColor = Color::Firebrick; // вероятность заразиться без маски и прививки 70%
+							else
+							buttons[i, j]->BackColor = Color::LightCoral;
+						}
+						if (Convert::ToInt32(mask_nal) < 75 && Convert::ToInt32(mask_nal) > 50) { //если маски между
+							//range = 1 + rand() % 100;
+
+							if (mas_ranges[i][j] <= 50)
+								buttons[i, j]->BackColor = Color::Firebrick; // вероятность заразиться без маски и прививки 70%
+							else
+								buttons[i, j]->BackColor = Color::LightCoral;
+						}
+						if (Convert::ToInt32(priv_nal) >= mas_ranges[i][j]) {
+							//range = 98;
+							buttons[i, j]->BackColor = Color::DarkGray; // привитые, которые не заболеют
+							text_buttons[i, j] = 5;	
+						}
+
+					}
+					//if (Convert::ToInt32(text_buttons[i, j]) == 3) //пожилые
+					//	buttons[i, j]->BackColor = Color::Firebrick;
+					if (Convert::ToInt32(text_buttons[i, j]) == 4) //исключение
+						buttons[i, j]->BackColor = Color::Black;
+				}
+			}
+		}
+		raz = 2;
+		
+	}
+	 
+	for (int i = 0; i < 21; i++) {
+		for (int j = 0; j < 21; j++) {
+			range = 1 + rand() % 100;
+			mas_ranges[i][j] = range;
+		}
+	}
+	if (raz == 1) {
+		for (int j = 0; j < 21; j++) {
+			for (int i = 0; i < 21; i++) {
+				if (i == 10 && j == 10)	//посередине первый зараженный, отмечен красным, выздоравливает
+					buttons[i, j]->BackColor = Color::SeaGreen;
+				else {
+					if (Convert::ToInt32(text_buttons[i, j]) == 1) //дети
+						buttons[i, j]->BackColor = Color::PapayaWhip;
+					if (Convert::ToInt32(text_buttons[i, j]) == 2 || Convert::ToInt32(text_buttons[i, j]) == 3) {	//взрослые и пожилые
+						
+							String^ smerth = numericUpDown5->Text;
+							range = 1 + rand() % 100;
+							String^ mask_n = numericUpDown6->Text;
+
+							String^ bol_nal = numericUpDown9->Text;
+
+							if (Convert::ToInt32(mask_n) >= 70)	//маска больше чем у 70%
+								range = 95;
+							if (mas_ranges[i][j] > range) {		//смертность снижается до минимума
+									buttons[i, j]->BackColor = Color::Black;
+							}
+							else
+								buttons[i, j]->BackColor = Color::SeaGreen;	//остальные выздоровели
+							
+							if (Convert::ToInt32(bol_nal) < 50)
+								range = 10;
+							else
+								range = 5;
+							
+
+								if (mas_ranges[i][j] <= range) {		//смертность снижается до минимума
+									buttons[i, j]->BackColor = Color::Black;
+								}
+								else
+									buttons[i, j]->BackColor = Color::SeaGreen;	//остальные выздоровели
+							
+					}
+						
+
+					if (Convert::ToInt32(text_buttons[i, j]) == 4) //исключение
+						buttons[i, j]->BackColor = Color::Black;
+				}
+			}
+		}
+		raz = 0;
+	}
+
+
 }
 };
 }
